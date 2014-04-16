@@ -1,0 +1,2 @@
+# Integrate VeraControls devices with CommandFusion iViewer
+For more details, see the [CommandFusion Wiki VeraControls page](http://www.commandfusion.com/wiki2/software/modules-and-examples/vera-control)

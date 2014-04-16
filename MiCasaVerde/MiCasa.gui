@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<gui>
+  <properties>
+    <project>MiCasa</project>
+    <designer>
+    </designer>
+    <size autoposition="scale">
+      <portrait width="768" height="1024" />
+      <landscape width="1024" height="768" />
+    </size>
+    <autoposition />
+    <imagefolder>
+    </imagefolder>
+    <debug loaderrors="1" connectionerrors="1" />
+    <devices>
+      <device name="Craers iPad">A06EB470294983EF8801BDA61F8B4B76</device>
+    </devices>
+  </properties>
+  <themes>
+    <theme type="text" name=".Device_Name"><![CDATA[ color: White; font-size: 12px; font-family: 'Arial'; text-align: left; vertical-align: middle; font-weight: normal; font-style: none; text-decoration: none; display: table-cell;]]></theme>
+    <theme type="button" name=".Button_On[state='0']"><![CDATA[padding: 0px 0px 0px 0px; background-image: url(Resources\On.png); color: White; font-size: 12px; font-family: 'Verdana'; font-weight: normal; font-style: none; text-decoration: none; text-align: center; vertical-align: middle; display: table-cell; box-sizing: border-box; -webkit-box-sizing: border-box; -webkit-tap-highlight-color:rgba(0,0,0,0);]]></theme>
+    <theme type="button" name=".Button_On[state='1']"><![CDATA[padding: 0px 0px 0px 0px; color: White; font-size: 12px; font-family: 'Verdana'; font-weight: normal; font-style: none; text-decoration: none; text-align: center; vertical-align: middle; display: table-cell; box-sizing: border-box; -webkit-box-sizing: border-box; -webkit-tap-highlight-color:rgba(0,0,0,0);]]></theme>
+    <theme type="button" name=".Button_Off[state='0']"><![CDATA[padding: 0px 0px 0px 0px; background-image: url(Resources\Off.png); color: White; font-size: 12px; font-family: 'Verdana'; font-weight: normal; font-style: none; text-decoration: none; text-align: center; vertical-align: middle; display: table-cell; box-sizing: border-box; -webkit-box-sizing: border-box; -webkit-tap-highlight-color:rgba(0,0,0,0);]]></theme>
+    <theme type="button" name=".Button_Off[state='1']"><![CDATA[padding: 0px 0px 0px 0px; color: White; font-size: 12px; font-family: 'Verdana'; font-weight: normal; font-style: none; text-decoration: none; text-align: center; vertical-align: middle; display: table-cell; box-sizing: border-box; -webkit-box-sizing: border-box; -webkit-tap-highlight-color:rgba(0,0,0,0);]]></theme>
+    <theme type="text" name=".Room"><![CDATA[ color: Blue; font-size: 15px; font-family: 'Arial'; text-align: left; vertical-align: middle; font-weight: normal; font-style: none; text-decoration: none; display: table-cell;]]></theme>
+  </themes>
+  <scripts>
+    <script name="MiCasaVerde.js" />
+  </scripts>
+  <page name="Main" j="0" tags="" transition="" subtype="" time="0" ease="">
+    <portrait />
+    <landscape>
+      <subpage name="DeviceList" x="37" y="25" j="0" transition1="" subtype1="" time1="0" ease1="" transition2="" subtype2="" time2="0" ease2="" clickthrough="0" topmost="0" v="1" l="0" tags="" />
+      <subpage name="DeviceList_2" x="37" y="214" j="0" transition1="" subtype1="" time1="0" ease1="" transition2="" subtype2="" time2="0" ease2="" clickthrough="0" topmost="0" v="1" l="0" tags="" />
+      <subpage name="DeviceList_3" x="37" y="404" j="0" transition1="" subtype1="" time1="0" ease1="" transition2="" subtype2="" time2="0" ease2="" clickthrough="0" topmost="0" v="1" l="0" tags="" />
+      <subpage name="DeviceList_4" x="37" y="593" j="0" transition1="" subtype1="" time1="0" ease1="" transition2="" subtype2="" time2="0" ease2="" clickthrough="0" topmost="0" v="1" l="0" tags="" />
+    </landscape>
+  </page>
+  <subpage name="DeviceListItem" w="225" h="110" clip="1">
+    <img x="0" y="0" w="200" h="100" j="0" clickthrough="0" refresh="0" l="0" noCache="0" downloadIndicator="0" clearOnURLChange="0" tags="">Resources\Device_Background.png</img>
+    <txt j="10" x="14" y="5" w="172" h="15" t="Device_Name" wrap="False" l="0" tags="">Text</txt>
+    <img x="6" y="34" w="50" h="50" j="11" clickthrough="0" refresh="0" l="0" noCache="0" downloadIndicator="0" clearOnURLChange="0" tags="" />
+    <btn j="12" x="61" y="38" w="50" h="25" t="Button_On" flip="None" sim="0" l="0" s="1" tags="">
+      <actions>
+        <action>
+          <release delay="0" js="DeviceOn(list, listIndex, join)" />
+        </action>
+      </actions>
+      <inactive s="12">
+      </inactive>
+      <active s="12">
+      </active>
+    </btn>
+    <btn j="13" x="128" y="38" w="50" h="25" t="Button_Off" flip="None" sim="0" l="0" s="1" tags="">
+      <actions>
+        <action>
+          <release delay="0" js="DeviceOff(list, listIndex, join)" />
+        </action>
+      </actions>
+      <inactive s="13">
+      </inactive>
+      <active s="13">
+      </active>
+    </btn>
+  </subpage>
+  <subpage name="DeviceList" w="950" h="150" clip="1">
+    <list j="100" x="5" y="25" w="943" h="150" headerSub="" titleSub="" contentSub="DeviceListItem" footerSub="" orientation="h" l="0" swipedelete="0" tags="" />
+    <txt j="200" x="22" y="1" w="456" h="21" t="Room" wrap="False" l="0" tags="">
+    </txt>
+  </subpage>
+  <subpage name="DeviceList_2" w="950" h="150" clip="1">
+    <list j="101" x="5" y="25" w="943" h="150" headerSub="" titleSub="" contentSub="DeviceListItem" footerSub="" orientation="h" l="0" swipedelete="0" tags="" />
+    <txt j="201" x="22" y="1" w="456" h="21" t="Room" wrap="False" l="0" tags="">
+    </txt>
+  </subpage>
+  <subpage name="DeviceList_3" w="950" h="150" clip="1">
+    <list j="102" x="5" y="25" w="943" h="150" headerSub="" titleSub="" contentSub="DeviceListItem" footerSub="" orientation="h" l="0" swipedelete="0" tags="" />
+    <txt j="202" x="22" y="1" w="456" h="21" t="Room" wrap="False" l="0" tags="">
+    </txt>
+  </subpage>
+  <subpage name="DeviceList_4" w="950" h="150" clip="1">
+    <list j="103" x="5" y="25" w="943" h="150" headerSub="" titleSub="" contentSub="DeviceListItem" footerSub="" orientation="h" l="0" swipedelete="0" tags="" />
+    <txt j="203" x="22" y="1" w="456" h="21" t="Room" wrap="False" l="0" tags="">
+    </txt>
+  </subpage>
+  <subpage name="zCACHE" w="768" h="1024" clip="1">
+    <img x="19" y="23" w="50" h="50" j="0" clickthrough="0" refresh="0" l="0" noCache="0" downloadIndicator="0" clearOnURLChange="0" tags="">Resources\light_Off.jpg</img>
+    <img x="76" y="23" w="50" h="50" j="0" clickthrough="0" refresh="0" l="0" noCache="0" downloadIndicator="0" clearOnURLChange="0" tags="">Resources\light_On.jpg</img>
+  </subpage>
+</gui>
