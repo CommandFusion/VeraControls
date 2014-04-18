@@ -13,7 +13,6 @@
     </imagefolder>
     <debug loaderrors="1" connectionerrors="1" />
     <devices>
-      <device name="Craers iPad">A06EB470294983EF8801BDA61F8B4B76</device>
     </devices>
   </properties>
   <themes>
